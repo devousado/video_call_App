@@ -40,7 +40,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                     textColor: Colors.black,
                     color: Colors.white,
                     context: context,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push('/joinMeetingPage');
+                    },
                     text: "Join meeting"),
                 customButtom(
                     color: Colors.blue,

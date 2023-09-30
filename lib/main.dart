@@ -5,9 +5,26 @@ import 'package:video_call/router/app_router.dart';
 import 'package:video_call/view/home_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ProviderScope(
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          textTheme: TextTheme(
+            bodyMedium: GoogleFonts.almarai(
+              color: Colors.black,
+              fontSize: 20,
+            ),
+          ),
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            backgroundColor: Colors.white,
+            centerTitle: true,
+          ),
+          scaffoldBackgroundColor: Colors.white,
+          useMaterial3: true,
+        ),
         routerConfig: router,
       ),
     ),
@@ -20,22 +37,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: TextTheme(
-          bodyMedium: GoogleFonts.almarai(
-            color: Colors.black,
-            fontSize: 20,
-          ),
-        ),
-        appBarTheme:
-            const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
-    );
+    return const HomePage();
   }
 }
