@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget customButtom(
         {required BuildContext context,
+        double? width,
         required void Function()? onPressed,
         Color? textColor,
         required String text,
@@ -9,8 +10,10 @@ Widget customButtom(
     ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
+        shape: MaterialStatePropertyAll(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
         fixedSize: MaterialStatePropertyAll(Size(
-            MediaQuery.of(context).size.width * 0.45,
+            width ?? MediaQuery.of(context).size.width * 0.45,
             MediaQuery.of(context).size.height * 0.07)),
         backgroundColor: MaterialStatePropertyAll(color),
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:video_call/view/constantes/svg_images_const.dart';
 import 'package:video_call/view/util/svg_converter.dart';
@@ -44,7 +45,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                 customButtom(
                     color: Colors.blue,
                     context: context,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push('/mcreatingMeetingPage');
+                    },
                     text: "Creat a meeting")
               ],
             )
@@ -56,7 +59,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   Widget _header() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 130),
+      padding: const EdgeInsets.only(bottom: 120),
       child: Column(
         children: [
           SizedBox(
